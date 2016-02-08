@@ -1,0 +1,14 @@
+rspec:
+  image: wedding_api:$APP_ENV
+  environment:
+    RAILS_ENV: test
+  links:
+    - db
+  command: bundle exec rspec
+db:
+  image: postgres:9.4
+  environment:
+    POSTGRES_USER: wedding_api
+    POSTGRES_PASSWORD: thehorserunaway
+  expose:
+    - "5432"

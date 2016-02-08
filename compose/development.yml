@@ -1,0 +1,16 @@
+app:
+  image: wedding_api:$APP_ENV
+  environment:
+    PORT: 3000
+    RAILS_ENV: development
+  ports:
+    - "3000:3000"
+  links:
+    - db
+db:
+  image: postgres:9.4
+  environment:
+    POSTGRES_USER: wedding_api
+    POSTGRES_PASSWORD: thehorserunaway
+  expose:
+    - "5432"
