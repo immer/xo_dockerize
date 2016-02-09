@@ -14,6 +14,4 @@ ADD . $APP_DIR
 
 EXPOSE 80
 
-CMD bundle exec unicorn -p $PORT -c ./config/unicorn.rb
-
-
+CMD bundle exec unicorn -p 80 -c ./config/unicorn.rb

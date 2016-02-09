@@ -1,10 +1,9 @@
 app:
   image: wedding_api:$APP_ENV
   environment:
-    PORT: 3000
     RAILS_ENV: development
   ports:
-    - "3000:3000"
+    - "80:80"
   links:
     - db
 db:
