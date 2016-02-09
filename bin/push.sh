@@ -7,6 +7,10 @@ eval $(docker run \
   sahsu/docker-aws-cli \
   ecr get-login --region us-east-1)
 
+if [ "$?" != "0" ]; then
+  exit 1
+fi
+
 ECR_HOST=352362988575.dkr.ecr.us-east-1.amazonaws.com
 DOCKER_IMAGE_NAME=$ECR_HOST/wedding_api
 docker push $DOCKER_IMAGE_NAME:$APP_ENV
