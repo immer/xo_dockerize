@@ -19,6 +19,12 @@ if [ "$?" != "0" ]; then
   exit 1
 fi
 
+docker/bin/migrate.sh
+
+if [ "$?" != "0" ]; then
+  exit 1
+fi
+
 docker run \
   -v $(pwd):/home \
   -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \

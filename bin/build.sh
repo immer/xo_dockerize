@@ -5,6 +5,6 @@ docker build -f docker/Dockerfile \
              --build-arg RAILS_ENV=$RAILS_ENV \
              --build-arg DB_HOST=$DB_HOST \
              --build-arg DB_PORT=$DB_PORT \
-             --build-arg POSTGRES_USERNAME=$POSTGRES_USERNAME \
-             --build-arg POSTGRES_PASSWORD=$POSTGRES_PASSWORD \
+             --build-arg DB_USERNAME=$DB_USERNAME \
+             --build-arg DB_PASSWORD=$DB_PASSWORD \
              -t wedding_api:$APP_ENV .
