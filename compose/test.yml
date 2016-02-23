@@ -7,6 +7,6 @@ rspec:
     - mongodb
   command: rspec
 mongodb:
-  image: mongo:3.2.1/
+  image: mongo:3.2.3
   expose:
     - "27017"

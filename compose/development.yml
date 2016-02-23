@@ -7,7 +7,7 @@ app:
   ports:
     - "80:80"
 mongodb:
-  image: mongo:3.2.1
+  image: mongo:3.2.3
   volumes:
     - /data
   expose:
