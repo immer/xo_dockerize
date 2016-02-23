@@ -1,14 +1,12 @@
 rspec:
   image: wedding_api:$APP_ENV
   environment:
+    MONGODB_HOST: mongodb
     RAILS_ENV: test
   links:
-    - db
-  command: bundle exec rspec
-db:
-  image: postgres:9.4
-  environment:
-    POSTGRES_USER: wedding_api
-    POSTGRES_PASSWORD: thehorserunaway
+    - mongodb
+  command: rspec
+mongodb:
+  image: mongo:3.2.1/
   expose:
-    - "5432"
+    - "27017"

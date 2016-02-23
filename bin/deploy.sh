@@ -19,8 +19,6 @@ if [ "$?" != "0" ]; then
   exit 1
 fi
 
-docker/bin/migrate.sh
-
 if [ "$?" != "0" ]; then
   exit 1
 fi
