@@ -13,7 +13,7 @@ docker run \
   -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
   -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION \
   manuelgfx/docker-aws-eb-cli-git \
-  use wedding-api-$APP_ENV-nosql
+  use wedding-api-$APP_ENV-v2
 
 if [ "$?" != "0" ]; then
   exit 1
