@@ -6,8 +6,7 @@ if [ "$?" != "0" ]; then
   exit 1
 fi
 
-
-docker run \
+docker run --rm \
   -v $(pwd):/home \
   -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
   -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
@@ -23,7 +22,7 @@ if [ "$?" != "0" ]; then
   exit 1
 fi
 
-docker run \
+docker run --rm \
   -v $(pwd):/home \
   -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
   -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
@@ -35,7 +34,7 @@ if [ "$?" != "0" ]; then
   exit 1
 fi
 
-docker run \
+docker run --rm \
   -v $(pwd):/home \
   -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
   -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
