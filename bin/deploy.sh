@@ -18,10 +18,6 @@ if [ "$?" != "0" ]; then
   exit 1
 fi
 
-if [ "$?" != "0" ]; then
-  exit 1
-fi
-
 docker run --rm \
   -v $(pwd):/home \
   -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
