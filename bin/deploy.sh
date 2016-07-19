@@ -12,7 +12,7 @@ docker run --rm \
   -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
   -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION \
   manuelgfx/docker-aws-eb-cli-git \
-  use wedding-api-$APP_ENV-v3
+  use wedding-api-$APP_ENV
 
 if [ "$?" != "0" ]; then
   exit 1
