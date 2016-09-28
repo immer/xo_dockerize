@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-ECR_HOST=352362988575.dkr.ecr.us-east-1.amazonaws.com
-DOCKER_IMAGE_NAME=$ECR_HOST/wedding_api
+DOCKER_IMAGE_NAME=$ECR_HOST/$GENERIC_BUILD_IMAGE
 
-docker tag -f wedding_api:$APP_ENV \
+docker tag -f $PROJECT_NAME:$APP_ENV \
   $DOCKER_IMAGE_NAME:$APP_ENV

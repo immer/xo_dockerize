@@ -12,5 +12,5 @@ if [ "$?" != "0" ]; then
 fi
 
 ECR_HOST=352362988575.dkr.ecr.us-east-1.amazonaws.com
-DOCKER_IMAGE_NAME=$ECR_HOST/wedding_api
+DOCKER_IMAGE_NAME=$ECR_HOST/$PROJECT_NAME
 docker push $DOCKER_IMAGE_NAME:$APP_ENV

@@ -1,5 +1,5 @@
 rspec:
-  image: wedding_api:$APP_ENV
+  image: $PROJECT_NAME:$APP_ENV
   environment:
     MONGODB_HOST: mongodb
     RAILS_ENV: test

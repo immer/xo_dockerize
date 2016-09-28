@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "352362988575.dkr.ecr.us-east-1.amazonaws.com/wedding_api:qa",
+    "Name": "352362988575.dkr.ecr.us-east-1.amazonaws.com/$PROJECT_NAME:qa",
     "Update": "true"
   },
   "Ports": [
