@@ -1,0 +1,12 @@
+rspec:
+  image: $PROJECT_NAME:$APP_ENV
+  environment:
+    MONGODB_HOST: mongodb
+    RAILS_ENV: test
+  links:
+    - mongodb
+  command: rspec
+mongodb:
+  image: mongo:3.2.3
+  expose:
+    - "27017"
