@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-DOCKER_IMAGE_NAME=$ECR_HOST/$GENERIC_BUILD_IMAGE
-
-docker tag -f $PROJECT_NAME:$APP_ENV \
-  $DOCKER_IMAGE_NAME:$APP_ENV

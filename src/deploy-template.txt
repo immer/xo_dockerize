@@ -1,0 +1,7 @@
+image_url=$CONTAINER_HOST/$APP_NAME:$APP_ENV
+
+# Create a Dockerrun.aws.json file for eb create/deploy
+bin/jq -n --arg image_url $image_url -f Dockerrun.aws.jq > Dockerrun.aws.json
+
+eb deploy --staged
+

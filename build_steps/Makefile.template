@@ -1,0 +1,11 @@
+release: build tag push
+
+build:
+	sh docker/build.sh
+
+tag:
+	sh docker/tag.sh
+
+push:
+	sh docker/push.sh
+

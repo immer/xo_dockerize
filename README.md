@@ -1,73 +1,65 @@
-# xo_dockerize
-Adds the skeleton of files needed to get your project working with Docker and ElasticBeanstalk
+XO Dockerize
+---
 
-The goal of this project is to enable any existing or new project to conform to a template of dockerizing and deploying to Elastic Beanstalk.
+### Pre-requisites
 
-It adds the necessary files to your project so that you can just run
+You should have these programs installed
 
-``` make release env=qa type=web ```
+- `aws`
+- `eb`
+- `docker`
+
 
 ## Setup
 
-Just run:
-
-``` ./dockerize.rb this ```
-
-Follow the prompts to fill in the information for your project:
+To install the docker scaffolding to your project
 
 ```
-⇒  ./dockerize.rb this
-Copying setup files...
+curl --remote-name https://raw.githubusercontent.com/xogroup/xo_dockerize/master/dkr
 
-Please enter the information for your application:
-
-Application Name:
-JustNeph
-
-ECR Host:
-12341231.aws.com
-
-Version:
-1.0.0
+sh dkr
 ```
 
-## Test Run
-To run this as a dry run into a test folder:
+This command will (among other things) create a `env.example` file. Fill in the
+values of the environment variables listed in that file with the values you
+require.
 
-```./dockerize.rb this --test```
+After that, you should be able to run these commands to push a container to a
+registry
 
-## Documentation
-
-For further documentation on the dockerizing command just run:
-
-``` ./dockerize.rb this --help ```
 
 ```
-NAME:
-    this
+source <my-env-file>
 
-  SYNOPSIS:
-    dockerize this [options]
-
-  DESCRIPTION:
-    Will initiate the dockerization process
-
-  EXAMPLES:
-    # description
-    dockerize this --ruby --circleci
-
-  OPTIONS:
-    --ruby
-        Adds the files for a ruby/rails project
-
-    --circleci
-        Adds the files for a circle ci supported project
+make release
 ```
 
-This will copy all the files needed based on the answers to the questions
+When you are ready to deploy your application, you'll need a stack. Run these
+commands to set things up
 
-### Supports
 
-* General Application Setup
-* Ruby/Rails setup
-* Circle CI
+```
+curl --remote-name https://raw.githubusercontent.com/xogroup/xo_dockerize/master/stk
+
+sh stk
+```
+
+Once your stack is created, you'll want to customize it. For a list of helpful
+suggestions re. tagging, tiers, load balancers, etc., run this command
+
+
+```
+aws elasticbeanstalk update-environment help
+```
+
+
+## Development
+
+The `stk` and `dkr` executables are composed of other files located in the `etc`
+directory. Take a look at the `Makefile` for an idea of what's going on.
+
+If you need to start afresh, you can run
+
+```
+make clean
+```
