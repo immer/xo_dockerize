@@ -1,0 +1,14 @@
+app:
+  image: $PROJECT_NAME:$APP_ENV
+  environment:
+    MONGODB_HOST: mongodb
+  links:
+    - mongodb
+  ports:
+    - "80:80"
+mongodb:
+  image: mongo:3.2.3
+  volumes:
+    - /data
+  expose:
+    - "27017"
